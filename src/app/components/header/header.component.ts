@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Results } from 'src/interfaces';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -30,7 +31,7 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
     this.abilities = [];

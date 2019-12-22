@@ -8,14 +8,16 @@ import { VerifyEmailComponent } from '../../components/verify-email/verify-email
 
 import { AuthGuard } from '../../shared/guard/auth.guard';
 import { HomeComponent } from 'src/app/components/home/home.component';
+import { PokemonDetailComponent } from 'src/app/components/pokemon-detail/pokemon-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
-  { path: 'register-user', component: SignUpComponent, canActivate: [AuthGuard] },
+  { path: 'register-user', component: SignUpComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [AuthGuard] },
-  { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [AuthGuard] }
+  { path: 'detail/:name', component: PokemonDetailComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

@@ -12,7 +12,7 @@
       <p>Email: <strong>{{user.email}}</strong></p>
       <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
     </div>
-    <button (click)="authService.signOut()">Sair</button>
+   
   </div>
 </nav> -->
 
@@ -25,7 +25,8 @@
 <div style="text-align:center">
   <div class="grid-layout" *ngIf="pokemonsLoaded && pokemons">
     <div
-      *ngFor="let pokemon of pokemons.results | search: query | typeFilter: typeFilters | abilitiesFilter: abilityFilters">
+      *ngFor="let pokemon of pokemons.results | search: query | typeFilter: typeFilters | abilitiesFilter: abilityFilters"
+      (click)="openDialog(pokemon)">
       <mat-card class="pokemon-card" *ngIf="pokemon.details">
         <mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title>
         <div class="id">{{ pokemon.id }}</div>

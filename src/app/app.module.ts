@@ -26,6 +26,8 @@ import { TypeFilterPipe } from './pipes/typeFilter.pipe';
 import { AbilitiesFilterPipe } from './pipes/abilitiesFilter.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './shared/guard/auth.guard';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { HomeComponent } from './components/home/home.component';
     SearchPipe,
     TypeFilterPipe,
     AbilitiesFilterPipe,
-    HomeComponent
+    HomeComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,7 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 

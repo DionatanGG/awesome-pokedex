@@ -18,7 +18,7 @@ export class PokemonService {
   }
 
   /**
-   * Returns original 151 pokemon
+   * Retorna os 151 pokemons originais
    */
   getPokemon(): Observable<PokeAPI> {
     return this.http
@@ -27,7 +27,7 @@ export class PokemonService {
   }
 
   /**
-   * Uses pokemon name to retrieve individual pokemon details
+   * Retorna detalhes de cada pokemon usando nome como parâmetro
    */
   getPokemonDetails(name): Observable<PokemonDetails> {
     return this.http
@@ -36,7 +36,7 @@ export class PokemonService {
   }
 
   /**
-   * Uses pokemon name to retrieve individual pokemon species details
+   * Retorna detalhes individuais das espécies usando nome como parâmetro
    */
   getPokemonSpecies(name): Observable<any> {
     return this.http
@@ -45,15 +45,12 @@ export class PokemonService {
   }
 
   /**
-   * Handles any request error
+   * Trata os erros
    */
   private _handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error.message);
+      console.error('Ocorreu um erro:', error.error.message);
     } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
       console.error(
         `Backend returned code ${error.status}, ` + `body was: ${error.error}`
       );
