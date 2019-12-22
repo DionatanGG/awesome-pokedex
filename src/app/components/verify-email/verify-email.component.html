@@ -1,11 +1,6 @@
 <div class="displayTable">
   <div class="displayTableCell">
 
-    <div class="px-logo">
-      <a href="https://www.positronx.io" target="_blank">
-        <img src="https://www.positronx.io/wp-content/themes/positronx/img/logo-positronx-white.svg" alt="positronX.io - Learn Full Stack Development">
-      </a>
-    </div>
 
     <div class="authBlock">
       <h3>Thank You for Registering</h3>
@@ -17,7 +12,7 @@
 
       <!-- Calling SendVerificationMail() method using authService Api -->
       <div class="formGroup">
-        <button type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
+        <button type="button" class="btn btnPrimary" (click)="authService.sendVerificationMail()">
           <i class="fas fa-redo-alt"></i>
           Resend Verification Email
         </button>

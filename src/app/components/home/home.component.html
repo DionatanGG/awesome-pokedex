@@ -1,0 +1,7 @@
+<app-header [pokemons]="pokemons" (searchChange)="newPokemonSearch($event)" (typeSelected)="newTypeSelected($event)"
+    (abilitiesSelected)="newAbilitiesSelected($event)">
+</app-header>
+
+<app-dashboard (exportPokemons)="exportPokemons($event)" [search]="search" [typeFilter]="typeFilter"
+    [abilityFilter]="abilityFilter">
+</app-dashboard>

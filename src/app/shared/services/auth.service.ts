@@ -34,7 +34,7 @@ export class AuthService {
     try {
       const result = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
       this.ngZone.run(() => {
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['home']);
       });
       this.setUserData(result.user);
     } catch (error) {
@@ -79,7 +79,7 @@ export class AuthService {
     try {
       const result = await this.afAuth.auth.signInWithPopup(provider);
       this.ngZone.run(() => {
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['home']);
       });
       this.setUserData(result.user);
     } catch (error) {

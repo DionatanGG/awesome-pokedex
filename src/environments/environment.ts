@@ -7,5 +7,7 @@ export const environment = {
     projectId: 'pokedex-d9eb7',
     storageBucket: 'pokedex-d9eb7.appspot.com',
     messagingSenderId: '84658628098'
-  }
+  },
+  pokemonURL: 'https://pokeapi.co/api/v2/pokemon',
+  pokemonSpeciesURL: 'https://pokeapi.co/api/v2/pokemon-species'
 };

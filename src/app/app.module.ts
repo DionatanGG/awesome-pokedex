@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './shared/routing/app-routing.module';
 
@@ -18,6 +18,14 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
 import { AuthService } from './shared/services/auth.service';
+import { HeaderComponent } from './components/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './modules/material-module';
+import { SearchPipe } from './pipes/search.pipe';
+import { TypeFilterPipe } from './pipes/typeFilter.pipe';
+import { AbilitiesFilterPipe } from './pipes/abilitiesFilter.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -27,7 +35,12 @@ import { AuthService } from './shared/services/auth.service';
     SignUpComponent,
     DashboardComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    HeaderComponent,
+    SearchPipe,
+    TypeFilterPipe,
+    AbilitiesFilterPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +48,11 @@ import { AuthService } from './shared/services/auth.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
