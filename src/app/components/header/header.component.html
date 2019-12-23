@@ -1,10 +1,9 @@
 <mat-toolbar>
-    <img class="pokemon-logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1280px-International_Pok%C3%A9mon_logo.svg.png" />
+    <img class="pokemon-logo" src="assets/logo.png">
 
-    <div class="search-box">
-        <input matInput class="search-input" type="text" [(ngModel)]="search" (ngModelChange)="searchEvent()"
-            placeholder="Enter Pokemon name or id..." />
+    <div class=" search-box">
+        <input class="search-input" type="text" [(ngModel)]="search" (ngModelChange)="searchEvent()"
+            placeholder="Digite o nome ou id do pokemon..." />
         <button mat-button class="close-button" *ngIf="search" matSuffix mat-icon-button aria-label="Clear"
             (click)="searchEvent('')">
             <mat-icon>close</mat-icon>
@@ -12,8 +11,8 @@
     </div>
 
     <div class="filter-component">
-        <mat-label class="filter">Filter by Type</mat-label>
-        <mat-form-field class="form-field">
+        <mat-form-field floatLabel="never" class="form-field">
+            <mat-label>Filtrar por tipo</mat-label>
             <mat-select [(ngModel)]="currentType" (ngModelChange)="onTypeSelected()">
                 <mat-option>None</mat-option>
                 <mat-option *ngFor="let type of types" [value]="type">
@@ -24,8 +23,8 @@
     </div>
 
     <div class="filter-component">
-        <mat-label class="filter">Filter by Abilities</mat-label>
-        <mat-form-field class="form-field">
+        <mat-form-field floatLabel="never" class="form-field">
+            <mat-label>Filtrar por habilidades</mat-label>
             <mat-select [(ngModel)]="currentAbilities" (ngModelChange)="onAbilitySelected()" multiple>
                 <mat-select-trigger>
                     {{currentAbilities ? currentAbilities[0]: ''}}

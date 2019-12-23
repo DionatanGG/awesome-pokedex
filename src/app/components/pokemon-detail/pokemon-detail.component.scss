@@ -1,0 +1,27 @@
+.dialog-container {
+	display: flex;
+}
+
+.pokemon-image {
+	height: 350px;
+	max-width: 100%;
+	padding-left: 30px;
+}
+
+.details-container {
+	display: flex;
+	padding: 0 30px;
+
+	.section {
+		display: flex;
+		flex-direction: column;
+		padding: 0 20px;
+		div {
+			ul {
+				margin: 0;
+				list-style: none;
+				padding: 0;
+			}
+		}
+	}
+}

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { PokeAPI, PokemonDetails, Results, TYPE_COLOURS } from 'src/interfaces';
 import { PokemonService } from 'src/app/shared/services/pokemon.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
@@ -10,32 +10,28 @@ import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.compone
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  @Output() exportPokemons = new EventEmitter();
   @Input() set search(newSearch: string) {
     if (newSearch !== this.query) {
       this.query = newSearch;
     }
   }
-
   @Input() set typeFilter(type: string) {
     if (type !== this.typeFilter) {
       this.typeFilters = type;
     }
   }
-
   @Input() set abilityFilter(abilities: Array<string>) {
     if (abilities !== this.abilityFilters) {
       this.abilityFilters = abilities;
     }
   }
 
-  @Output() exportPokemons = new EventEmitter();
-
   public pokemonsLoaded: boolean;
   public pokemons: PokeAPI;
   public query: string;
   public abilityFilters: Array<string>;
   public typeFilters: string;
-
 
   constructor(private pokemonService: PokemonService, private dialog: MatDialog) { }
 
@@ -94,14 +90,11 @@ export class DashboardComponent implements OnInit {
   }
 
   openDialog(pokemon: PokemonDetails) {
-
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.hasBackdrop = true;
     dialogConfig.data = {
       name: pokemon.name
     };
-
     this.dialog.open(PokemonDetailComponent, dialogConfig);
   }
 }

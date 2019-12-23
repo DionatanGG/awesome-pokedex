@@ -1,8 +1,51 @@
-<span mat-dialog-title>{{pokemon?.name}}</span>
+<span mat-dialog-title>{{pokemon?.name | titlecase}}</span>
 <mat-dialog-content>
-    <span>{{pokemon?.weight}}</span>
-</mat-dialog-content>
+    <div class="dialog-container">
+        <img class="pokemon-image" src="{{ pokemon?.sprites.front_default }}" alt="photo of {{ pokemon?.name }}" />
+        <div class="details-container">
 
+            <section class="section">
+                <h3>Características</h3>
+                <label>Altura:</label>
+                <span>{{pokemon?.height}}</span>
+                <label>Peso:</label>
+                <span>{{pokemon?.weight}}</span>
+            </section>
+
+            <section class="section">
+                <h3>Tipo</h3>
+                <span *ngFor="let type of pokemon?.types">{{type.type.name | titlecase}}</span>
+            </section>
+
+            <section class="section">
+                <h3>Habilidades</h3>
+                <span *ngFor="let ability of pokemon?.abilities">{{ability.ability.name | titlecase}}</span>
+            </section>
+
+            <section class="section">
+                <h3>Estatísticas</h3>
+                <div *ngFor="let item of pokemon?.stats">
+                    <ul>
+                        <li>
+                            {{ item.stat.name | titlecase }} : {{ item.base_stat }}
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3>Ataques</h3>
+                <div *ngFor="let move of pokemon?.moves | slice:0:10">
+                    <ul>
+                        <li>{{ move.move.name }}</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+</mat-dialog-content>
 <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Fechar</button>
 </mat-dialog-actions>

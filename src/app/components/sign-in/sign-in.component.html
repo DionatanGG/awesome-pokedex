@@ -1,43 +1,41 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-
-
-    <div class="authBlock">
-      <h3>Sign In</h3>
+<div class="sign-in-container">
+  <div class="inner-container">
+    <img class="pokemon-logo" src="assets/logo.png">
+    <div class="form-container">
       <div class="formGroup">
-        <input type="text" class="formControl" placeholder="Username" #userName required>
+        <mat-form-field appearance="standard" floatLabel="always">
+          <mat-label>Usuário</mat-label>
+          <input matInput type="text" class="formControl" #userName required>
+        </mat-form-field>
       </div>
-
       <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPassword required>
+        <mat-form-field appearance="standard" floatLabel="always">
+          <mat-label>Senha</mat-label>
+          <input matInput type="password" class="formControl" #userPassword required>
+        </mat-form-field>
       </div>
-
-      <!-- Calling SignIn Api from AuthService -->
-      <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Log in"
-          (click)="authService.signIn(userName.value, userPassword.value)">
-      </div>
-
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-
-      <!-- Calling GoogleAuth Api from AuthService -->
-      <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authService.googleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Log in with Google
-        </button>
-      </div>
-
+    </div>
+    <div class="formGroup">
+      <button type="button" class="btn-primary" (click)="authService.signIn(userName.value, userPassword.value)">
+        <label>Entrar</label>
+      </button>
+    </div>
+    <div class="formGroup">
+      <span class="or"><span class="orInner">Ou</span></span>
+    </div>
+    <div class="formGroup">
+      <button type="button" class="google-btn" (click)="authService.googleAuth()">
+        <img src="assets/google-logo.png" alt="Login com google">
+        <label>Login com Google</label>
+      </button>
+    </div>
+    <div class="footer">
       <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
+        <span>Esqueceu sua senha? <a routerLink="/forgot-password">Clique aqui</a></span>
+      </div>
+      <div class="redirectToLogin">
+        <span>Não tem uma conta?<a class="redirect" routerLink="/register-user"> Registre-se</a></span>
       </div>
     </div>
-
-    <div class="redirectToLogin">
-      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
-    </div>
-
   </div>
 </div>

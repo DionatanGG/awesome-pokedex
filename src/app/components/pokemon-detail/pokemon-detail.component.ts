@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { PokemonService } from 'src/app/shared/services/pokemon.service';
-import { ActivatedRoute } from '@angular/router';
-import { PokemonDetails, PokeAPI } from 'src/interfaces';
+import { PokemonDetails } from 'src/interfaces';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
@@ -12,10 +11,11 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 export class PokemonDetailComponent implements OnInit {
   public pokemon: PokemonDetails;
   public pokemonName: string;
+  public pokemonTypes: [];
+  public types: any;
 
   constructor(
     private pokemonService: PokemonService,
-    private route: ActivatedRoute,
     private dialogRef: MatDialogRef<PokemonDetailComponent>,
     @Inject(MAT_DIALOG_DATA) data: any) {
     this.pokemonName = data.name;
@@ -23,7 +23,10 @@ export class PokemonDetailComponent implements OnInit {
 
   ngOnInit() {
     this.pokemonService.getPokemonDetails(this.pokemonName).subscribe((details: PokemonDetails) => {
-      this.pokemon = details;
+      if (details) {
+        this.pokemon = details;
+        console.log(this.pokemon);
+      }
     });
   }
 }

@@ -12,24 +12,23 @@ export class HeaderComponent implements OnInit {
   @Output() typeSelected = new EventEmitter();
   @Output() abilitiesSelected = new EventEmitter();
 
-  abilities: Array<string>;
-  types: Array<string>;
-  pokemonList: Array<Results>;
-  search: string;
-  currentType: string;
-  currentAbilities: Array<string>;
-
   @Input() set pokemons(pokemons: Results[]) {
     if (pokemons !== this.pokemonList) {
       this.pokemonList = pokemons;
 
-      // Get types and abilities from each pokemon
       this.pokemonList.forEach(pokemon => {
         this.setPokemonAbilities(pokemon);
         this.setPokemonTypes(pokemon);
       });
     }
   }
+
+  public abilities: Array<string>;
+  public types: Array<string>;
+  public pokemonList: Array<Results>;
+  public search: string;
+  public currentType: string;
+  public currentAbilities: Array<string>;
 
   constructor(public authService: AuthService) { }
 
@@ -38,20 +37,13 @@ export class HeaderComponent implements OnInit {
     this.types = [];
   }
 
-  /**
-   * Called when a search field is updated
-   */
-  searchEvent(search): void {
-    // check for cleared search
+  searchEvent(search: string): void {
     if (search === '') {
       this.search = search;
     }
     this.searchChange.emit(this.search);
   }
 
-  /**
-   * Called when a type has been selected
-   */
   onTypeSelected(): void {
     if (this.currentType) {
       this.typeSelected.emit(this.currentType);
@@ -60,9 +52,6 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  /**
-   * Called when ability filter changes
-   */
   onAbilitySelected(): void {
     if (this.currentAbilities && this.currentAbilities.length) {
       this.abilitiesSelected.emit(this.currentAbilities);
@@ -71,9 +60,6 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  /**
-   * Grabs pokemons abilities and adds to array
-   */
   setPokemonAbilities(pokemon: Results): void {
     if (pokemon) {
       pokemon.details.abilities.forEach(ability => {
@@ -86,9 +72,6 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  /**
-   * Grabs a pokemons types and adds to array
-   */
   setPokemonTypes(pokemon: Results): void {
     if (pokemon) {
       pokemon.details.types.forEach(type => {

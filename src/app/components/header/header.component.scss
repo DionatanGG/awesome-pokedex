@@ -1,10 +1,9 @@
 .mat-toolbar {
-	background-color: #ef5350;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 	position: sticky;
-	position: -webkit-sticky; /* For macOS/iOS Safari */
-	top: 0; /* Sets the sticky toolbar to be on top */
-	z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+	position: -webkit-sticky;
+	top: 0;
+	z-index: 1000;
 
 	.pokemon-logo {
 		margin-left: 50px;
@@ -22,15 +21,28 @@
 	.search-box {
 		margin-right: 10px;
 		.search-input {
-			font-size: 16px;
-			font-weight: bold;
+			font-size: 12px;
 			margin-left: 50px;
 			padding: 2px 5px 2px 20px;
 			width: 270px;
 			border-radius: 50px;
-			border: none;
-			outline: none !important;
-			background: white;
+			outline: none;
+			background: #133756;
+			border: 1px solid #0c507f;
+			transition: border 350ms ease;
+			&::placeholder {
+				color: #ffffff;
+				opacity: 1;
+				transition: opacity 350ms ease;
+			}
+			&:focus {
+				border: 1px solid #ffffff;
+				color: #ffffff;
+
+				&::placeholder {
+					opacity: 0;
+				}
+			}
 		}
 		.close-button {
 			margin-left: -35px;
@@ -76,4 +88,10 @@
 	.filter-component {
 		margin: 5px 0px !important;
 	}
+}
+
+mat-label {
+	color: var(--primary-text) !important;
+	font-size: 12px;
+	font-weight: 400;
 }

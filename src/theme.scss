@@ -1,0 +1,19 @@
+:root {
+	--body-bg: #0f2331;
+	--outline: #0e2c41;
+	--card-bg: #0d2e43;
+	--card-header: #133756;
+	--header-bg: #0d1e28;
+	--primary-text: #ffffff;
+	--secondary-text: #707d85;
+	--secondary: #389d67;
+}
+
+body {
+	font-family: Roboto;
+	background-color: var(--body-bg);
+}
+
+mat-toolbar {
+	background-color: var(--header-bg) !important;
+}

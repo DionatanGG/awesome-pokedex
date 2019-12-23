@@ -28,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-deta
     TypeFilterPipe,
     AbilitiesFilterPipe,
     HomeComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
