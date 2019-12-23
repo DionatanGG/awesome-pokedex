@@ -2,7 +2,7 @@
     <img class="pokemon-logo" src="assets/logo.png">
 
     <div class=" search-box">
-        <input class="search-input" type="text" [(ngModel)]="search" (ngModelChange)="searchEvent()"
+        <input class="search-input" type="text" [(ngModel)]="search" (ngModelChange)="searchEvent($event)"
             placeholder="Digite o nome ou id do pokemon..." />
         <button mat-button class="close-button" *ngIf="search" matSuffix mat-icon-button aria-label="Clear"
             (click)="searchEvent('')">
@@ -38,5 +38,5 @@
             </mat-select>
         </mat-form-field>
     </div>
-    <button (click)="authService.signOut()">Sair</button>
+    <app-profile-dropdown></app-profile-dropdown>
 </mat-toolbar>

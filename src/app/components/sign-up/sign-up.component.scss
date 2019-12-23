@@ -1,0 +1,90 @@
+.sign-in-container {
+	min-height: 100vh;
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	.inner-container {
+		flex-grow: 1;
+		max-width: 400px;
+		margin: 0 auto;
+		text-align: center;
+		background: #ffffff;
+		border-radius: 6px;
+		padding: 50px 60px;
+	}
+}
+
+.form-container {
+	margin: 40px 0;
+}
+
+.formGroup {
+	display: flex;
+	justify-content: center;
+}
+
+.btn-primary {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--secondary);
+	border: none;
+	padding: 13px;
+	border-radius: 6px;
+	cursor: pointer;
+	width: 184px;
+	margin-bottom: 15px;
+	transition: background-color 350ms ease;
+	label {
+		color: #fff;
+		cursor: pointer;
+	}
+
+	&:hover {
+		background-color: #3c7958;
+	}
+}
+
+.google-btn {
+	display: flex;
+	align-items: center;
+	background-color: #ffffff;
+	border: 2px solid var(--outline);
+	padding: 13px;
+	border-radius: 6px;
+	width: 208px;
+	cursor: pointer;
+	transition: all 350ms ease;
+	margin-top: 15px;
+	img {
+		height: 18px;
+		margin-right: 7px;
+	}
+	label {
+		color: #333;
+		transition: color 350ms ease;
+		cursor: pointer;
+	}
+	&:hover {
+		border: 2px solid transparent;
+		background-color: var(--card-header);
+		label {
+			color: var(--primary-text);
+		}
+	}
+}
+
+.footer {
+	margin-top: 40px;
+}
+
+span {
+	color: #9aa4ab;
+	font-size: 12px;
+}
+
+.mat-form-field {
+	width: 100%;
+}

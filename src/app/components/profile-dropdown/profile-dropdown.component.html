@@ -1,0 +1,15 @@
+<div class="profile-container">
+
+    <div class="img-container">
+        <img src="{{(authService.userData?.photoURL) ? authService.userData?.photoURL : '/assets/dummy-user.png'}}"
+            alt="{{authService.userData?.displayName}}">
+    </div>
+
+    <div class="user-info" *ngIf="authService.userData">
+        <span
+            class="user-name">{{(authService.userData?.displayName) ? authService.userData?.displayName : 'User'}}</span>
+        <span class="user-email">{{authService.userData?.email}}</span>
+    </div>
+
+    <button class="logout" (click)="authService.signOut()">Sair</button>
+</div>

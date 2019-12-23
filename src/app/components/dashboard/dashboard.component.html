@@ -1,26 +1,6 @@
-<!-- <nav>
-  <div class="brand-container">
-    <img class="pokemon-logo"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1280px-International_Pok%C3%A9mon_logo.svg.png" />
-  </div>
-  <div class="user-container">
-    <div class="user-info" *ngIf="authService.userData as user">
-      <img class="align-self-start mr-5 img-thumbnail rounded-circle"
-        src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}">
-      <h1>Olá <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-      <p>User ID: <strong>{{user.uid}}</strong></p>
-      <p>Email: <strong>{{user.email}}</strong></p>
-      <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
-    </div>
-   
-  </div>
-</nav> -->
-
-<!-- Show Loading symbol if there are no pokemon or all 151 haven't loaded-->
 <div class="loading" *ngIf="!pokemonsLoaded">
   <app-loader></app-loader>
 </div>
-
 <div style="text-align:center">
   <div class="grid-layout" *ngIf="pokemonsLoaded && pokemons">
     <div

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PokeAPI, PokemonDetails, Results, TYPE_COLOURS } from 'src/interfaces';
 import { PokemonService } from 'src/app/shared/services/pokemon.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';

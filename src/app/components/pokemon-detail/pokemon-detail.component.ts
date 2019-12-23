@@ -9,7 +9,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
   styleUrls: ['./pokemon-detail.component.scss']
 })
 export class PokemonDetailComponent implements OnInit {
-  public pokemon: PokemonDetails;
+  public pokemon: any;
   public pokemonName: string;
   public pokemonTypes: [];
   public types: any;

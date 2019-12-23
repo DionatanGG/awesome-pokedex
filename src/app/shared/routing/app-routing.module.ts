@@ -9,6 +9,7 @@ import { VerifyEmailComponent } from '../../components/verify-email/verify-email
 import { AuthGuard } from '../../shared/guard/auth.guard';
 import { HomeComponent } from 'src/app/components/home/home.component';
 import { PokemonDetailComponent } from 'src/app/components/pokemon-detail/pokemon-detail.component';
+import { NotFoundComponent } from 'src/app/components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
@@ -18,10 +19,11 @@ const routes: Routes = [
   { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'detail/:name', component: PokemonDetailComponent, canActivate: [AuthGuard] },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 

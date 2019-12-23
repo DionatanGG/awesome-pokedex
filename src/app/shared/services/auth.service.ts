@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, Output } from '@angular/core';
 import { User } from '../user';
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 
 export class AuthService {
-  userData: any;
+  public userData: any;
 
   constructor(
     public afs: AngularFirestore,
@@ -48,7 +48,8 @@ export class AuthService {
       this.sendVerificationMail();
       this.setUserData(result.user);
     } catch (error) {
-      window.alert(error.message);
+      window.alert('Este e-mail já está sendo usado por outra conta.');
+      console.log(error.message);
     }
   }
 
@@ -60,7 +61,9 @@ export class AuthService {
   public async forgotPassword(passwordResetEmail: any) {
     try {
       await this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail);
-      window.alert('Password reset email sent, check your inbox.');
+      // tslint:disable-next-line: max-line-length
+      window.alert('Redefinição de senha enviada, por favor, verifique seu e-mail.\nCaso não encontre o e-mail na caixa de entrada, verifique a caixa de spam.');
+      this.router.navigate(['sign-in']);
     } catch (error) {
       window.alert(error);
     }

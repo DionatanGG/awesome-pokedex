@@ -29,6 +29,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { ProfileDropdownComponent } from './components/profile-dropdown/profile-dropdown.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     AbilitiesFilterPipe,
     HomeComponent,
     PokemonDetailComponent,
-    LoaderComponent
+    LoaderComponent,
+    ProfileDropdownComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

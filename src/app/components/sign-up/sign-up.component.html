@@ -1,40 +1,38 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-
-
-    <div class="authBlock">
-      <h3>Sign Up</h3>
-
+<div class="sign-in-container">
+  <div class="inner-container">
+    <img class="pokemon-logo" src="assets/logo.png">
+    <div class="form-container">
       <div class="formGroup">
-        <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+        <mat-form-field appearance="standard" floatLabel="always">
+          <mat-label>E-mail</mat-label>
+          <input matInput type="text" class="formControl" #userEmail required>
+        </mat-form-field>
       </div>
-
       <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPwd required>
+        <mat-form-field appearance="standard" floatLabel="always">
+          <mat-label>Senha</mat-label>
+          <input matInput type="password" class="formControl" #userPwd required>
+        </mat-form-field>
       </div>
-
-      <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Sign Up"
-          (click)="authService.signUp(userEmail.value, userPwd.value)">
-      </div>
-
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-
-      <!-- Continue with Google -->
-      <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authService.googleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Continue with Google
-        </button>
-      </div>
-
     </div>
-
-    <div class="redirectToLogin">
-      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+    <div class="formGroup">
+      <button type="button" class="btn-primary" (click)="authService.signUp(userEmail.value, userPwd.value)">
+        <label>Registrar</label>
+      </button>
+    </div>
+    <div class="formGroup">
+      <span class="or"><span class="orInner">Ou</span></span>
+    </div>
+    <div class="formGroup">
+      <button type="button" class="google-btn" (click)="authService.googleAuth()">
+        <img src="assets/google-logo.png" alt="Login com google">
+        <label>Continue com Google</label>
+      </button>
+    </div>
+    <div class="footer">
+      <div class="redirectToLogin">
+        <span>Já tem uma conta?<a class="redirect" routerLink="/sign-in"> Login</a></span>
+      </div>
     </div>
   </div>
-
 </div>

@@ -1,0 +1,46 @@
+.profile-container {
+	display: flex;
+	align-items: center;
+	.img-container {
+		height: 40px;
+		border-radius: 50%;
+		overflow: hidden;
+		margin-right: 20px;
+		img {
+			max-height: 100%;
+		}
+	}
+
+	.user-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-right: 20px;
+		.user-name {
+			font-size: 15px;
+			color: #fff;
+			font-weight: 500;
+			margin-bottom: -11px;
+		}
+
+		.user-email {
+			font-size: 12px;
+			color: #fff;
+			font-weight: 300;
+		}
+	}
+
+	.logout {
+		border: 1px solid #fff;
+		background-color: #0d1e28;
+		color: #fff;
+		border-radius: 8px;
+		font-size: 14px;
+		padding: 0 15px;
+		cursor: pointer;
+		transition: background-color 350ms ease;
+		&:hover {
+			background-color: var(--card-header);
+		}
+	}
+}
