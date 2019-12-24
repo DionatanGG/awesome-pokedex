@@ -1,4 +1,4 @@
 # Example of a `.gitattributes` file which reclassifies `.rb` files as Java:
 *.ts linguist-language=TypeScript
 
-*.css linguist-vendored
+components/* linguist-vendored
