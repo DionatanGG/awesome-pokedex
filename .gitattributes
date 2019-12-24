@@ -2,3 +2,6 @@
 *.ts linguist-language=TypeScript
 
 components/* linguist-vendored
+
+* linguist-vendored
+*.ts linguist-vendored=false
