@@ -48,8 +48,7 @@ export class AuthService {
       this.sendVerificationMail();
       this.setUserData(result.user);
     } catch (error) {
-      window.alert('Este e-mail já está sendo usado por outra conta.');
-      console.log(error.message);
+      window.alert('E-mail inválido');
     }
   }
 
