@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PokeAPI, PokemonDetails, Results, TYPE_COLOURS } from 'src/interfaces';
 import { PokemonService } from 'src/app/shared/services/pokemon.service';
-import { MatDialog, MatDialogConfig } from '@angular/material';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
 
 @Component({
