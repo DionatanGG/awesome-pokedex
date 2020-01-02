@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
-import { Results } from 'src/interfaces';
+
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { Results } from 'src/app/shared/interfaces/results.interface';
 
 @Component({
   selector: 'app-header',

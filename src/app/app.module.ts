@@ -1,36 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
-import { AppRoutingModule } from './shared/routing/app-routing.module';
-
-import { AppComponent } from './app.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from '../environments/environment';
 
+import { environment } from '../environments/environment';
 import { AuthService } from './shared/services/auth.service';
 import { HeaderComponent } from './components/header/header.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './modules/material-module';
-import { SearchPipe } from './pipes/search.pipe';
-import { TypeFilterPipe } from './pipes/typeFilter.pipe';
-import { AbilitiesFilterPipe } from './pipes/abilitiesFilter.pipe';
-import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ProfileDropdownComponent } from './components/profile-dropdown/profile-dropdown.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AppComponent } from './app.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
+import { SearchPipe } from './shared/pipes/search.pipe';
+import { TypeFilterPipe } from './shared/pipes/typeFilter.pipe';
+import { AbilitiesFilterPipe } from './shared/pipes/abilitiesFilter.pipe';
+import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './shared/modules/material-module';
 
 
 @NgModule({

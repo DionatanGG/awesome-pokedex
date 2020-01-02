@@ -1,7 +1,7 @@
 <div class="profile-container">
 
-    <div class="img-container">
-        <img src="{{(authService.userData?.photoURL) ? authService.userData?.photoURL : '/assets/dummy-user.png'}}"
+    <div class="img-container" *ngIf="authService.userData?.displayName">
+        <img src="{{(authService.userData?.photoURL) ? authService.userData?.photoURL : '/assets/images/avatar-placeholder.png'}}"
             alt="{{authService.userData?.displayName}}">
     </div>
 

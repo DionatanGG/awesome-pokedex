@@ -1,9 +1,11 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { PokeAPI, PokemonDetails } from 'src/interfaces';
+import { PokeAPI } from '../interfaces/pokeapi.interface';
+import { PokemonDetails } from '../interfaces/pokemon-details.interface';
 
 @Injectable({
   providedIn: 'root'

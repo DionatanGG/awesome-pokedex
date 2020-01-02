@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Results } from 'src/interfaces';
+
+import { Results } from 'src/app/shared/interfaces/results.interface';
 
 @Component({
   selector: 'app-home',

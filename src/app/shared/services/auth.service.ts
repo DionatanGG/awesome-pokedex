@@ -1,9 +1,10 @@
-import { Injectable, NgZone, Output } from '@angular/core';
-import { User } from '../user';
-import { auth } from 'firebase/app';
+import { Injectable, NgZone } from '@angular/core';
+import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Router } from '@angular/router';
+
+import { auth } from 'firebase/app';
+import { User } from '../models/user-model';
 
 @Injectable({
   providedIn: 'root'

@@ -1,8 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { PokeAPI, PokemonDetails, Results, TYPE_COLOURS } from 'src/interfaces';
-import { PokemonService } from 'src/app/shared/services/pokemon.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+
 import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
+import { PokemonService } from 'src/app/shared/services/pokemon.service';
+import { PokeAPI } from 'src/app/shared/interfaces/pokeapi.interface';
+import { Results } from 'src/app/shared/interfaces/results.interface';
+import { PokemonDetails } from 'src/app/shared/interfaces/pokemon-details.interface';
+import { TYPE_COLORS } from 'src/app/shared/enums/type-colors.enum';
 
 @Component({
   selector: 'app-dashboard',
@@ -85,7 +89,7 @@ export class DashboardComponent implements OnInit {
 
   _getTypeColour(type: string): string {
     if (type) {
-      return '#' + TYPE_COLOURS[type];
+      return '#' + TYPE_COLORS[type];
     }
   }
 

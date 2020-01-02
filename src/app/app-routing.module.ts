@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SignInComponent } from '../../components/sign-in/sign-in.component';
-import { SignUpComponent } from '../../components/sign-up/sign-up.component';
-import { ForgotPasswordComponent } from '../../components/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from '../../components/verify-email/verify-email.component';
-
-import { AuthGuard } from '../../shared/guard/auth.guard';
-import { HomeComponent } from 'src/app/components/home/home.component';
 import { PokemonDetailComponent } from 'src/app/components/pokemon-detail/pokemon-detail.component';
-import { NotFoundComponent } from 'src/app/components/not-found/not-found.component';
+import { AuthGuard } from './shared/guard/auth.guard';
+import { HomeComponent } from './pages/home/home.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
