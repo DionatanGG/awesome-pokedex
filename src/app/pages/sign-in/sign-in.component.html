@@ -3,22 +3,28 @@
     <img class="pokemon-logo" src="assets/images/logo.png">
     <div class="form-container">
       <div class="formGroup">
-        <mat-form-field appearance="standard" floatLabel="always">
-          <mat-label>E-mail</mat-label>
-          <input matInput type="text" class="formControl" #userName required>
-        </mat-form-field>
+        <!-- <mat-form-field appearance="standard" floatLabel="always"> -->
+        <!-- <mat-label>E-mail</mat-label> -->
+        <div class="input-container">
+          <input matInput type="text" class="formControl" placeholder="E-mail" #userName required>
+        </div>
+        <!-- </mat-form-field> -->
       </div>
       <div class="formGroup">
-        <mat-form-field appearance="standard" floatLabel="always">
-          <mat-label>Senha</mat-label>
-          <input matInput type="password" class="formControl" #userPassword required>
-        </mat-form-field>
+        <!-- <mat-form-field appearance="standard" floatLabel="always"> -->
+        <!-- <mat-label>Senha</mat-label> -->
+        <div class="input-container">
+          <input matInput type="password" class="formControl" placeholder="Senha" #userPassword required>
+        </div>
+        <!-- </mat-form-field> -->
       </div>
     </div>
     <div class="formGroup">
-      <button type="button" class="btn-primary" (click)="authService.signIn(userName.value, userPassword.value)">
-        <label>Entrar</label>
-      </button>
+      <div class="btn-outter">
+        <button type="button" class="btn-primary" (click)="authService.signIn(userName.value, userPassword.value)">
+          <span>Entrar</span>
+        </button>
+      </div>
     </div>
     <div class="formGroup">
       <span class="or"><span class="orInner">Ou</span></span>
@@ -26,7 +32,7 @@
     <div class="formGroup">
       <button type="button" class="google-btn" (click)="authService.googleAuth()">
         <img src="assets/images/google-logo.png" alt="Login com google">
-        <label>Login com Google</label>
+        <span>Login com Google</span>
       </button>
     </div>
     <div class="footer">
